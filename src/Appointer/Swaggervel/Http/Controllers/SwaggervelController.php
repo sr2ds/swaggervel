@@ -80,7 +80,7 @@ class SwaggervelController extends Controller
         if (is_writable($docDir)) {
             $excludeDirs = config('swaggervel.excludes');
 
-            $swagger = \Swagger\scan($appDir, [
+            $swagger = \OpenApi\Generator::scan([$appDir], [
                 'exclude' => $excludeDirs
             ]);
 
